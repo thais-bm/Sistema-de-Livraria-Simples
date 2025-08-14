@@ -1,0 +1,527 @@
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font: 1rem sans-serif;
+}
+
+p {
+  color: black
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.2em 0;
+}
+ul {
+  padding: 0;
+  margin: 0 0 0.2em 0;
+  list-style: none;
+  display: flex;
+  align-self: center;
+}
+
+#nav-bar {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.nav-bar-item {
+  flex-grow: 1;
+  text-align: center;
+  color: gray;
+}
+
+.nav-bar-item:hover {
+  color: #027399;
+  text-decoration: underline; 
+}
+
+.read-more {
+  margin-top: 1%;
+  color: cornflowerblue;
+  font-weight: bold;
+  font-size: medium;
+
+}
+
+.read-more:hover {
+  color: #000;
+  text-decoration: underline; 
+
+}
+
+.book-list {
+  color: #027399;
+}
+
+.book-list a {
+  color: #027399;
+}
+
+.book-list:hover{
+  color: #000;
+}
+
+.book-list a:hover{
+  color: #000;
+  text-decoration: underline; 
+}
+
+#livro-temp{
+  list-style: none;
+  display: inline-block;
+  align-items: center;
+  color: #000;
+}
+
+#buy-btn {
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 1px; 
+  padding: 10px 20px 10px 10px;
+}
+
+#buy-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+#buy-btn p {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0;
+}
+
+#buy-btn:hover {
+    background-color: #3e8e41;
+}
+
+
+.logo {
+  display: inline-block;
+  align-items: center;
+  justify-content: center; 
+}
+
+.logo img {
+  width: 128px;
+  height: 128px;
+}
+
+.topo ul {
+  background: #c8e0e8;
+  border-bottom: 1px solid #cacaca;
+}
+.topo li {
+  display: inline-block;
+  border-right: 1px solid #999;
+}
+.topo li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 8px 20px;
+}
+.topo li a:hover {
+  color: #666;
+}
+.topo li:first-child a {
+  border-left: 1px solid #999;
+}
+
+/* Estilos para o carrinho */
+.cart {
+  display: flex;
+  flex-direction: column; /* ISSO AQUI EMPILHA OS ELEMENTOS AAA */
+  align-items: center;  
+  justify-content: center;
+  width: 100%;  
+}
+
+.cart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.carrinho-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  text-align: center;        
+  margin: 4rem; 
+
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carrinho-vazio p{
+  font-weight: bolder;
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.carrinho-vazio #link {
+  color: #3498db; /* Azul */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.carrinho-vazio #link:hover {
+  color: darkblue; /* Azul */
+  text-decoration: underline;
+}
+
+.carrinho-vazio button {
+  background-color: #3498db; 
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.carrinho-vazio button:hover {
+  background-color: #2980b9;
+}
+
+.lista-itens-carrinho, .resumo-carrinho {
+  width: 100%;
+  max-width: 800px; 
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.card-carrinho {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.card-carrinho:last-child {
+  border-bottom: none;
+}
+
+.detalhes-item {
+  flex-grow: 1; 
+}
+
+.detalhes-item h3 {
+  margin-bottom: 10px;
+}
+
+.detalhes-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.acoes-item {
+  text-align: right;
+}
+
+.subtotal-item {
+  color: darkslategrey;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-remover {
+  background-color: #e74c3c; /* Vermelho */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-remover:hover {
+  background-color: #c0392b;
+}
+
+#valor-total {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #27ae60; /* Verde */
+  margin-bottom: 20px;
+}
+
+.btn-finalizar {
+  background-color: #27ae60; /* Verde */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.btn-finalizar:hover {
+  background-color: #219653;
+}
+
+.principal a {
+  color: #027399;
+  text-decoration: none;
+}
+.thumb img {
+  display: block;
+  width: 80px;
+}
+.topo,
+.rodape {
+  text-align: center;
+  background: #eaefef;
+  padding: 1px 0;
+}
+.topo {
+  margin-bottom: 4px;
+}
+.principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #eaefef;
+  margin: 0 auto;
+}
+
+.principal h2 {
+  flex-basis: 100%;
+  font-size: 1em;
+  margin: 0;
+  padding: 6px 5px;
+  color: #fff;
+  background: #027399;
+}
+
+.principal h3:hover {
+  color: #000;
+}
+
+.principal h3 {
+  font-size: 1em;
+}
+.principal ol {
+  margin-top: 8px;
+}
+.card {
+  display: flex;
+  flex: 0 1 50%;
+  padding: 8px 0 10px 10px;
+  border-bottom: 1px solid #ccc;
+}
+.card h2 {
+  font-size: 16px;
+}
+.card p {
+  font-size: 14px;
+  margin: 0;
+}
+.thumb {
+  margin-right: 5px;
+}
+.detalhes {
+  display: flex;
+  flex-direction: column;
+}
+.rodape {
+  margin-top: 4px;
+}
+.livro {
+  overflow: auto;
+  margin: 20px 0;
+}
+.livro img {
+  display: block;
+  width: 180px;
+  float: left;
+  margin: 0 10px;
+}
+
+.preco {
+  display: flex;
+  color: green;
+  font-weight: bold;
+  align-items: center;
+  padding: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .principal {
+    flex-direction: column;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 91deg;
+}
+
+
+/* --- Estilos para a página de Checkout --- */
+.pagina-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 20px 20px;
+}
+
+.principal.pagina-checkout {
+  justify-content: flex-start;
+}
+
+.pagina-checkout h2 {
+  flex-basis: auto;
+  width: 100%;
+}
+
+.checkout-container {
+  width: 100%;
+  max-width: 600px; 
+}
+
+.resumo-pedido, .selecao-pagamento, .metodo-pagamento-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.resumo-pedido h4, .selecao-pagamento h4, .metodo-pagamento-card h4 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.total-pedido {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+.total-pedido strong {
+  color: #27ae60;
+}
+
+.botoes-pagamento {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.botoes-pagamento button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #029941;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.botoes-pagamento button:hover {
+  background-color: #027399;
+  border-color: #999;
+}
+
+.botoes-pagamento button.ativo {
+  background-color: #027399;
+  color: white;
+  border-color: #027399;
+}
+
+.metodo-pagamento-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qr-code {
+  margin: 1rem 0;
+  border: 5px solid #eee;
+  border-radius: 8px;
+}
+
+.form-checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-checkout input, .form-checkout select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-checkout input:focus, .form-checkout select:focus {
+  outline: none;
+  border-color: #027399;
+  box-shadow: 0 0 5px rgba(2, 115, 153, 0.5);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row input {
+  width: 100%;
+}
+
+.btn-pagar {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2ecc71;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-pagar:hover {
+  background-color: #27ae60;
+}
